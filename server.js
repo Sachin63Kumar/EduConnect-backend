@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const rateLimiter = require("./middlewares/rateLimit");
 const authRoutes = require("./routes/authRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const assignmentRoutes = require("./routes/assignmentRoutes");
@@ -21,6 +22,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(rateLimiter);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/faculty-dashboard", facultyDashboardRoutes);

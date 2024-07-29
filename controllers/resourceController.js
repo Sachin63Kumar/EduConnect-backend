@@ -6,7 +6,10 @@ const path = require("path");
 const { getStudentsByCourse } = require("../utils/courseUtils");
 const bucket = require("../config/firebase");
 const storage = multer.memoryStorage();
-const upload = multer({ storage });
+const upload = multer({
+  storage,
+  limits: { fileSize: 1 * 1024 * 1024 }, // 1 MB file size limit
+});
 
 const addResource = async (req, res) => {
   try {
