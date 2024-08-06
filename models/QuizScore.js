@@ -18,7 +18,7 @@ const quizScoreSchema = new mongoose.Schema(
     },
     attempts: {
       type: Number,
-      required: true, // Add this field for number of attempts
+      required: true,
     },
   },
   { timestamps: true }

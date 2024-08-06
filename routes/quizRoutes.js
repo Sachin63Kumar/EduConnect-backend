@@ -16,20 +16,3 @@ router.post("/submit/:quizId", QuizController.submitQuiz);
 router.get("/scores/:quizId", QuizController.getQuizScores);
 
 module.exports = router;
-
-// // routes/quizRoutes.js
-// const express = require("express");
-// const router = express.Router();
-// const {
-//   createQuiz,
-//   getQuizzesByCourse,
-//   getQuizById,
-//   submitQuiz,
-// } = require("../controllers/quizController");
-
-// router.post("/course/:courseId/create", createQuiz);
-// router.get("/course/:courseId", getQuizzesByCourse);
-// router.get("/:quizId", getQuizById);
-// router.post("/submit/:quizId", submitQuiz);
-
-// module.exports = router;
